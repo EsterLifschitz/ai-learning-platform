@@ -1,0 +1,132 @@
+.table-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #eef1f2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.scrollable-table {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #f8fafc;
+  padding: 1rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #4a4a4a;
+  border-bottom: 1px solid #eef1f2;
+  text-transform: uppercase;
+}
+
+.admin-table td {
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  color: #333333;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.table-row:hover {
+  background-color: #fcfdfe;
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-avatar {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background-color: #eef1f2;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.user-name {
+  font-weight: 600;
+}
+
+.phone-cell {
+  font-family: monospace;
+  color: #64748b;
+}
+
+.prompt-badge {
+  background-color: #f5f7f8;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  max-width: 18rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: 1px solid #eef1f2;
+  font-size: 0.85rem;
+}
+
+.pagination-footer {
+  padding: 1rem 1.25rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #eef1f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-indicator {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pag-btn {
+  padding: 0.4rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pag-btn:hover:not(:disabled) {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-color: #1a1a1a;
+}
+
+.pag-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.empty-table-row {
+  text-align: center;
+  padding: 4rem !important;
+  color: #8a94a6;
+  font-style: italic;
+}
