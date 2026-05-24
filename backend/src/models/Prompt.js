@@ -3,17 +3,17 @@ const mongoose = require('mongoose');
 const PromptSchema = new mongoose.Schema({
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User', // Link to the user who made the request
+        ref: 'User',  
         required: true
     },
     category_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category', // Link to the category
+        ref: 'Category',  
         required: true
     },
     sub_category_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'SubCategory', // Link to the sub-category
+        ref: 'SubCategory',  
         required: true
     },
     prompt: {
@@ -25,7 +25,7 @@ const PromptSchema = new mongoose.Schema({
         required: [true, 'AI response is required']
     }
 }, { 
-    timestamps: true // Automatically tracks the created_at field
+    timestamps: true  
 });
 
 module.exports = mongoose.model('Prompt', PromptSchema);

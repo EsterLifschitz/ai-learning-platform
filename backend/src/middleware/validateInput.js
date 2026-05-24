@@ -11,7 +11,7 @@ const validateRegister = (req, res, next) => {
         return next(new Error('Phone number field cannot be empty'));
     }
 
-    next(); // Everything is fine, move to the controller
+    next();  
 };
 
 const validatePrompt = (req, res, next) => {
@@ -32,7 +32,7 @@ const validatePrompt = (req, res, next) => {
         return next(new Error('Prompt content cannot be empty'));
     }
 
-    next(); // Everything is fine, move to the controller
+    next();  
 };
 
 module.exports = {

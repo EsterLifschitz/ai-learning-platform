@@ -8,7 +8,7 @@ const SubCategorySchema = new mongoose.Schema({
     },
     category_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category', // Relational link to the Category model
+        ref: 'Category',  
         required: [true, 'Sub-category must be linked to a parent category']
     }
 }, { timestamps: true });

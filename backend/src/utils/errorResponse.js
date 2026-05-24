@@ -3,7 +3,7 @@ class ErrorResponse extends Error {
         super(message);
         this.statusCode = statusCode;
 
-        // Captures the stack trace (where the error occurred in the code)
+         
         Error.captureStackTrace(this, this.constructor);
     }
 }

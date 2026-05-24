@@ -1,7 +1,7 @@
 const { OpenAI } = require('openai');
 
 class AIService {
-    // Removed the constructor to prevent early initialization before dotenv loads!
+     
 
     /**
      * Generates a lesson using OpenAI API with a local mock fallback
@@ -12,10 +12,10 @@ class AIService {
      */
     async generateLesson(categoryName, subCategoryName, userPrompt) {
         
-        // 1. Try fetching from the real OpenAI API
+         
         if (process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== 'mock_key') {
             try {
-                // Initialize OpenAI client dynamically only when the function is called
+                 
                 const openai = new OpenAI({
                     apiKey: process.env.OPENAI_API_KEY,
                 });
@@ -45,11 +45,11 @@ class AIService {
 
             } catch (apiError) {
                 console.warn('OpenAI API failed, falling back to local Mock. Error:', apiError.message);
-                // If API fails, code execution continues seamlessly to the Mock fallback below
+                 
             }
         }
 
-        // 2. Fallback Mock Mechanism (If no key provided or API failed)
+         
         await new Promise(resolve => setTimeout(resolve, 1000));
         const lowerCategory = categoryName.toLowerCase();
         const lowerSub = subCategoryName.toLowerCase();

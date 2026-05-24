@@ -9,16 +9,16 @@ const UserSchema = new mongoose.Schema({
     phone: {
         type: String,
         required: [true, 'Phone number is required'],
-        unique: true, // Prevents duplicate registrations with the same phone number
+        unique: true,  
         trim: true
     },
     role: {
         type: String,
-        enum: ['user', 'admin'], // Defines the user privilege level
+        enum: ['user', 'admin'],  
         default: 'user'
     }
 }, { 
-    timestamps: true // Automatically creates createdAt and updatedAt fields
+    timestamps: true  
 });
 
 module.exports = mongoose.model('User', UserSchema);
