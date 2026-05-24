@@ -1,0 +1,39 @@
+.admin-error-box {
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: #b91c1c;
+  background-color: #fef2f2;
+  border-right: 4px solid #b91c1c;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.kpi-card {
+  background-color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #eef1f2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.kpi-icon {
+  font-size: 1.4rem;
+}
+
+.kpi-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8a94a6;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.kpi-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+}

@@ -1,0 +1,118 @@
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f7f9fa; /* רקע בהיר נקי */
+  font-family: sans-serif;
+}
+
+.auth-card {
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  border: 1px solid #eef1f2;
+  width: 26rem;
+  box-sizing: border-box;
+}
+
+.auth-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.auth-error {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: #b91c1c;
+  background-color: #fef2f2;
+  border-right: 4px solid #b91c1c;
+  border-radius: 4px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a4a4a;
+  margin-bottom: 0.4rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #1a1a1a;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: 0.85rem;
+  color: #ffffff;
+  background-color: #1a1a1a; /* כפתור שחור דומיננטי */
+  border: none;
+  border-radius: 25px; /* מעוגל מלא */
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  transition: background-color 0.2s;
+}
+
+.auth-submit-btn:hover {
+  background-color: #333333;
+}
+
+.auth-submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.auth-redirect {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.auth-link {
+  color: #1a1a1a;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 0.25rem;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+button:disabled {
+  background-color: #cccccc !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
