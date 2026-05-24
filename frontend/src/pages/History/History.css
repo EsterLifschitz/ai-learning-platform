@@ -1,0 +1,135 @@
+.history-page {
+  min-height: 100vh;
+  background-color: #f7f9fa;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-nav {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 0.85rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.brand-badge {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 900;
+  font-size: 0.85rem;
+}
+
+.brand-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.history-container {
+  flex: 1;
+  max-w-4xl;
+  width: 100%;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.history-header {
+  border-bottom: 2px solid #eef1f2;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.history-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.history-subtitle {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.history-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #eef1f2;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.card-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #8a94a6;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.prompt-section, .response-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8a94a6;
+  letter-spacing: 0.5px;
+}
+
+.prompt-text {
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  background-color: #f5f7f8;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin: 0;
+  border: 1px solid #eef1f2;
+}
+
+.response-text {
+  font-size: 0.95rem;
+  color: #2d3748;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #8a94a6;
+  font-style: italic;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #eef1f2;
+}
