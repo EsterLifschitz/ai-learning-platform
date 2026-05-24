@@ -21,13 +21,11 @@ const getSubCategories = async (req, res, next) => {
     try {
         const { categoryId } = req.params;
 
-         
         const category = await Category.findById(categoryId);
         if (!category) {
             return next(new ErrorResponse(`Category not found with id of ${categoryId}`, 404));
         }
 
-         
         const subCategories = await SubCategory.find({ category_id: categoryId });
 
         res.status(200).json({
@@ -40,13 +38,11 @@ const getSubCategories = async (req, res, next) => {
     }
 };
 
- 
 const generateLessonPrompt = async (req, res, next) => {
     try {
         const { category_id, sub_category_id, prompt } = req.body;
         const userId = req.user._id;  
 
-         
         const category = await Category.findById(category_id);
         if (!category) {
             return next(new ErrorResponse('Invalid Category ID', 404));
@@ -57,10 +53,8 @@ const generateLessonPrompt = async (req, res, next) => {
             return next(new ErrorResponse('Invalid Sub-Category ID', 404));
         }
 
-         
         const aiResponse = await aiService.generateLesson(category.name, subCategory.name, prompt);
 
-         
         const savedPrompt = await Prompt.create({
             user_id: userId,
             category_id,
@@ -78,8 +72,18 @@ const generateLessonPrompt = async (req, res, next) => {
     }
 };
 
+const getUserHistory = async (req, res, next) => {
+    try {
+        const history = await Prompt.find({ user_id: req.user._id }).sort({ createdAt: -1 });
+        res.status(200).json({ success: true, data: history });
+    } catch (error) {
+        next(error);
+    }
+};
+
 module.exports = {
     getCategories,
     getSubCategories,
-    generateLessonPrompt
+    generateLessonPrompt,
+    getUserHistory
 };

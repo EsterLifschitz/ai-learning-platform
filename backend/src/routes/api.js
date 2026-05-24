@@ -1,29 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
- 
 const { registerUser, loginUser } = require('../controllers/userController');
-const { getCategories, getSubCategories, generateLessonPrompt } = require('../controllers/learningController');
-
- 
+const { getCategories, getSubCategories, generateLessonPrompt, getUserHistory } = require('../controllers/learningController');
 const { validateRegister, validatePrompt } = require('../middleware/validateInput');
-
-
- 
 const { getAllUserPrompts } = require('../controllers/adminController');
-
- 
 const { protect, adminOnly } = require('../middleware/auth');
 
- 
 router.post('/users/register', validateRegister, registerUser);
 router.post('/users/login', loginUser);
 
- 
 router.get('/categories', protect, getCategories);
 router.get('/categories/:categoryId/subcategories', protect, getSubCategories);
-router.post('/learning/prompt', protect, validatePrompt, protect, generateLessonPrompt);
- 
+router.post('/learning/prompt', protect, validatePrompt, generateLessonPrompt);
 
 /**
  * @swagger
@@ -57,5 +46,23 @@ router.post('/learning/prompt', protect, validatePrompt, protect, generateLesson
  * description: Internal server error
  */
 router.get('/admin/prompts', protect, adminOnly, getAllUserPrompts);
+
+/**
+ * @swagger
+ * /api/learning/history:
+ * get:
+ * summary: Get current user learning history
+ * tags: [Learning]
+ * security:
+ * - bearerAuth: []
+ * responses:
+ * 200:
+ * description: A list of the user's past learning prompts and AI responses
+ * 401:
+ * description: Unauthorized - Missing or invalid token
+ * 500:
+ * description: Internal server error
+ */
+router.get('/learning/history', protect, getUserHistory);
 
 module.exports = router;
