@@ -1,8 +1,41 @@
+import React, { useState } from 'react';
 import './AdminPanel.css';
 
-function AdminPanel({ prompts, page, totalPages, setPage }) {
+function AdminPanel({ prompts, page, totalPages, setPage, onFilterChange }) {
+  const [filterInput, setFilterInput] = useState('');
+
+  const handleFilterSubmit = (e) => {
+    e.preventDefault();
+    if (onFilterChange) {
+      onFilterChange(filterInput);
+    }
+  };
+
+  const handleClearFilter = () => {
+    setFilterInput('');
+    if (onFilterChange) {
+      onFilterChange('');
+    }
+  };
+
   return (
     <div className="table-wrapper">
+      <form onSubmit={handleFilterSubmit} className="admin-filter-form">
+        <input
+          type="text"
+          placeholder="Filter by User ID..."
+          value={filterInput}
+          onChange={(e) => setFilterInput(e.target.value)}
+          className="admin-filter-input"
+        />
+        <button type="submit" className="admin-filter-btn">Filter</button>
+        {filterInput && (
+          <button type="button" onClick={handleClearFilter} className="admin-clear-btn">
+            Clear
+          </button>
+        )}
+      </form>
+
       <div className="scrollable-table">
         <table className="admin-table">
           <thead>
@@ -62,7 +95,7 @@ function AdminPanel({ prompts, page, totalPages, setPage }) {
             &larr; Previous
           </button>
           <button 
-            disabled={page === totalPages} 
+            disabled={page === totalPages || totalPages === 0} 
             onClick={() => setPage((prev) => prev + 1)} 
             className="pag-btn"
           >
