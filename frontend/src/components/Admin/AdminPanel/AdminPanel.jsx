@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AdminPanel.css';
 
 function AdminPanel({ prompts, page, totalPages, setPage, onFilterChange }) {
   const [filterInput, setFilterInput] = useState('');
+  const navigate = useNavigate();
 
   const handleFilterSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +18,11 @@ function AdminPanel({ prompts, page, totalPages, setPage, onFilterChange }) {
     if (onFilterChange) {
       onFilterChange('');
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/login');
   };
 
   return (
@@ -34,6 +41,9 @@ function AdminPanel({ prompts, page, totalPages, setPage, onFilterChange }) {
             Clear
           </button>
         )}
+        <button type="button" onClick={handleLogout} className="admin-logout-btn" style={{ marginRight: 'auto' }}>
+          Sign Out
+        </button>
       </form>
 
       <div className="scrollable-table">
