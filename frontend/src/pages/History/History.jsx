@@ -61,9 +61,15 @@ function History() {
               history.map((item) => (
                 <div key={item._id} className="history-card">
                   <div className="card-meta">
-                    <span className="meta-date">{new Date(item.createdAt).toLocaleDateString()}</span>
-                    <span className="meta-time">
-                      {new Date(item.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    <span className="meta-category-tags">
+                      <span className="badge-cat">{item.category_id?.name || 'General'}</span>
+                      <span className="badge-subcat">{item.sub_category_id?.name || 'Lesson'}</span>
+                    </span>
+                    <span className="meta-time-group">
+                      <span className="meta-date">{new Date(item.created_at || item.createdAt).toLocaleDateString()}</span>
+                      <span className="meta-time">
+                        {new Date(item.created_at || item.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                      </span>
                     </span>
                   </div>
                   <div className="card-body">

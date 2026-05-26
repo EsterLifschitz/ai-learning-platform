@@ -1,101 +1,37 @@
-.admin-page {
+.dashboard-page {
   min-height: 100vh;
   background-color: #f7f9fa;
   display: flex;
   flex-direction: column;
-  font-family: sans-serif;
 }
 
-.admin-nav {
-  background-color: #1a1a1a; /* ניווט כהה אחיד */
-  color: #ffffff;
-  padding: 0.85rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.admin-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.brand-icon {
-  background-color: #ffffff;
-  color: #1a1a1a;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  font-weight: 900;
-  font-size: 0.85rem;
-}
-
-.brand-name {
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin: 0;
-}
-
-.admin-signout-btn {
-  padding: 0.5rem 1.2rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background-color: transparent;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.admin-signout-btn:hover {
-  background-color: #ffffff;
-  color: #1a1a1a;
-}
-
-.admin-content {
+.workspace-container {
   flex: 1;
   max-w-6xl;
   width: 100%;
   margin: 2.5rem auto;
   padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
-.content-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media (min-width: 768px) {
+  .workspace-container {
+    grid-template-columns: 1fr 2fr;
+  }
 }
 
-.content-title {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-.admin-loading-box {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-}
-
-.admin-spinner {
-  width: 2rem;
-  height: 2rem;
-  border: 3px solid #e2e8f0;
-  border-bottom-color: #1a1a1a;
-  border-radius: 50%;
-  animation: admin-spin 0.8s linear infinite;
-}
-
-@keyframes admin-spin {
-  to { transform: rotate(360deg); }
+.panel-error {
+  max-w-6xl;
+  width: calc(100% - 3rem);
+  margin: 1.5rem auto 0 auto;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: #b91c1c;
+  background-color: #fef2f2;
+  border-right: 4px solid #b91c1c; 
+  border-radius: 4px;
+  box-sizing: border-box;
 }
